@@ -144,10 +144,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load Earth textures
     const textureLoader = new THREE.TextureLoader();
     
-    const earthMap = textureLoader.load('../img/earth_map.jpg');
-    const earthBump = textureLoader.load('../img/earth_bump.jpg');
-    const earthSpec = textureLoader.load('../img/earth_spec.jpg');
-    const earthClouds = textureLoader.load('../img/earth_clouds.png');
+    const earthMap = textureLoader.load('/img/earth_map.jpg');
+    const earthBump = textureLoader.load('/img/earth_bump.jpg');
+    const earthSpec = textureLoader.load('/img/earth_spec.jpg');
+    const earthClouds = textureLoader.load('/img/earth_clouds.png');
     
     // Create Earth material
     const earthMaterial = new THREE.MeshPhongMaterial({

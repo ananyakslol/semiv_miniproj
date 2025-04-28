@@ -4,83 +4,151 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jupiter - Planet Details</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #ede7f6;
-      color: #333;
-    }
-    h1 {
-      color: #5e35b1;
-      text-align: center;
-    }
-    h2 {
-      color: #4527a0;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-    .planet-image {
-      display: block;
-      margin: 20px auto;
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .fun-fact {
-      background: #d1c4e9;
-      padding: 15px;
-      border-radius: 8px;
-      margin: 15px 0;
-    }
-    .back-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 15px;
-      background: #5e35b1;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-    .back-button:hover {
-      background: #4527a0;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../css/planet-styles.css">
 </head>
-<body>
-  <h1>Jupiter</h1>
-  
-  <img src="../img/p-jupiter.png" alt="Jupiter" class="planet-image">
-  
-  <h2>About Jupiter</h2>
-  <p>Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass more than two and a half times that of all the other planets in the Solar System combined, but slightly less than one-thousandth the mass of the Sun.</p>
-  
-  <h2>Fun Facts</h2>
-  <div class="fun-fact">
-    <p>Jupiter has the shortest day of all the planets. It rotates on its axis once every 9 hours and 55 minutes.</p>
+<body class="jupiter-theme">
+  <div class="stars-container">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
   </div>
-  <div class="fun-fact">
-    <p>The Great Red Spot is a persistent high-pressure region in Jupiter's atmosphere, producing an anticyclonic storm that is larger than Earth. It has been continuously observed since 1830.</p>
-  </div>
-  
-  <h2>Explorations & Discoveries</h2>
-  <p>NASA's Juno spacecraft entered orbit around Jupiter in 2016 and continues to study the planet's composition, gravity field, magnetic field, and polar magnetosphere.</p>
-  
-  <p>Earlier missions to Jupiter include Pioneer 10 and 11, Voyager 1 and 2, Galileo, Cassini, and New Horizons, all of which have helped scientists understand this massive planet.</p>
-  
-  <h2>Key Statistics</h2>
-  <ul>
-    <li><strong>Diameter:</strong> 139,820 km (11 times Earth's diameter)</li>
-    <li><strong>Mass:</strong> 1.898 × 10^27 kg (318 Earth masses)</li>
-    <li><strong>Orbital Period:</strong> 11.86 Earth years</li>
-    <li><strong>Rotation Period:</strong> 9.93 hours</li>
-    <li><strong>Average Distance from Sun:</strong> 778.5 million km</li>
-    <li><strong>Number of Moons:</strong> 79 confirmed</li>
-  </ul>
-  
-  <a href="../index.html" class="back-button">Back to Solar System</a>
+  <header>
+    <nav>
+      <a href="../index.html" class="back-button"><i class="fas fa-chevron-left"></i> Back to Solar System</a>
+      <div class="nav-controls">
+        <button id="sound-toggle"><i class="fas fa-volume-up"></i></button>
+        <button id="fullscreen-toggle"><i class="fas fa-expand"></i></button>
+      </div>
+    </nav>
+    <div class="planet-title">
+      <h1>Jupiter</h1>
+      <div class="planet-subtitle">Fifth Planet from the Sun</div>
+    </div>
+  </header>
+  <main>
+    <section class="planet-showcase">
+      <div id="planet-model-container"></div>
+      <div class="planet-controls">
+        <button class="control-btn" id="rotate-left"><i class="fas fa-undo"></i></button>
+        <button class="control-btn" id="rotate-right"><i class="fas fa-redo"></i></button>
+        <button class="control-btn" id="zoom-in"><i class="fas fa-search-plus"></i></button>
+        <button class="control-btn" id="zoom-out"><i class="fas fa-search-minus"></i></button>
+        <button class="control-btn" id="reset-view"><i class="fas fa-sync"></i></button>
+      </div>
+    </section>
+    <section class="info-navigation">
+      <button class="nav-tab active" data-tab="overview">Overview</button>
+      <button class="nav-tab" data-tab="composition">Composition</button>
+      <button class="nav-tab" data-tab="exploration">Exploration</button>
+      <button class="nav-tab" data-tab="fun-facts">Fun Facts</button>
+      <button class="nav-tab" data-tab="statistics">Statistics</button>
+    </section>
+    <section class="info-panels">
+      <div class="info-panel active" id="overview">
+        <div class="panel-content">
+          <h2><span class="highlight">Overview</span></h2>
+          <p>Jupiter is the fifth planet from the Sun and the largest in the solar system, more than twice as massive as all other planets combined. It is a gas giant with a thick atmosphere and dozens of moons[4].</p>
+          <div class="info-card">
+            <div class="card-icon"><i class="fas fa-bolt"></i></div>
+            <div class="card-content">
+              <h3>Great Red Spot</h3>
+              <p>Jupiter's Great Red Spot is a giant storm larger than Earth, raging for centuries.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-panel" id="composition">
+        <div class="panel-content">
+          <h2><span class="highlight">Composition</span></h2>
+          <p>Jupiter is made mostly of hydrogen and helium, with a possible rocky core deep inside. Its atmosphere features colorful bands and storms.</p>
+          <div class="composition-details">
+            <div class="composition-item">
+              <h3>Atmosphere</h3>
+              <p>~90% hydrogen, ~10% helium, trace methane, ammonia, water</p>
+            </div>
+            <div class="composition-item">
+              <h3>Core</h3>
+              <p>Possible rock/metal core, surrounded by metallic hydrogen</p>
+            </div>
+            <div class="composition-item">
+              <h3>Clouds</h3>
+              <p>Ammonia ice, water ice, and other compounds</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-panel" id="exploration">
+        <div class="panel-content">
+          <h2><span class="highlight">Exploration</span></h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">1973–</div>
+              <div class="timeline-content">
+                <h3>Pioneer, Voyager, Galileo</h3>
+                <p>Early flybys and the Galileo orbiter revealed Jupiter's atmosphere and moons.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2016–</div>
+              <div class="timeline-content">
+                <h3>Juno Orbiter</h3>
+                <p>Juno studies Jupiter's atmosphere, gravity, and magnetic field[4].</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2024–</div>
+              <div class="timeline-content">
+                <h3>Europa Clipper</h3>
+                <p>Launched to study Jupiter's moon Europa and its potential for life[4].</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-panel" id="fun-facts">
+        <div class="panel-content">
+          <h2><span class="highlight">Fun Facts</span></h2>
+          <div class="fun-fact-grid">
+            <div class="fun-fact-card">
+              <div class="fun-fact-icon"><i class="fas fa-moon"></i></div>
+              <h3>Many Moons</h3>
+              <p>Jupiter has at least 95 known moons, including Ganymede, the largest in the solar system[4].</p>
+            </div>
+            <div class="fun-fact-card">
+              <div class="fun-fact-icon"><i class="fas fa-stopwatch"></i></div>
+              <h3>Fast Spinner</h3>
+              <p>Jupiter has the shortest day: about 10 hours long.</p>
+            </div>
+            <div class="fun-fact-card">
+              <div class="fun-fact-icon"><i class="fas fa-dot-circle"></i></div>
+              <h3>Biggest Planet</h3>
+              <p>Over 1,000 Earths could fit inside Jupiter.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-panel" id="statistics">
+        <div class="panel-content">
+          <h2><span class="highlight">Statistics</span></h2>
+          <div class="stat-comparison">
+            <div class="stat-item"><div class="stat-label">Diameter</div><div class="stat-value">139,820 km</div></div>
+            <div class="stat-item"><div class="stat-label">Mass</div><div class="stat-value">1.90 × 10²⁷ kg</div></div>
+            <div class="stat-item"><div class="stat-label">Day Length</div><div class="stat-value">9.9 hours</div></div>
+            <div class="stat-item"><div class="stat-label">Year Length</div><div class="stat-value">11.86 Earth years</div></div>
+            <div class="stat-item"><div class="stat-label">Avg. Distance from Sun</div><div class="stat-value">778.5 million km</div></div>
+            <div class="stat-item"><div class="stat-label">Surface Temp</div><div class="stat-value">-145°C (cloud tops)</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 3D CSS Solar System Explorer</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+  <script src="../js/planet-jupiter.js"></script>
 </body>
 </html>

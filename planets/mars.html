@@ -4,83 +4,151 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mars - Planet Details</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #ffebee;
-      color: #333;
-    }
-    h1 {
-      color: #c62828;
-      text-align: center;
-    }
-    h2 {
-      color: #b71c1c;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-    .planet-image {
-      display: block;
-      margin: 20px auto;
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .fun-fact {
-      background: #ffcdd2;
-      padding: 15px;
-      border-radius: 8px;
-      margin: 15px 0;
-    }
-    .back-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 15px;
-      background: #c62828;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-    .back-button:hover {
-      background: #b71c1c;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../css/planet-styles.css">
 </head>
-<body>
-  <h1>Mars</h1>
-  
-  <img src="../img/p-mars.png" alt="Mars" class="planet-image">
-  
-  <h2>About Mars</h2>
-  <p>Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury. Mars is often called the "Red Planet" because of its reddish appearance, which is due to iron oxide (rust) on its surface.</p>
-  
-  <h2>Fun Facts</h2>
-  <div class="fun-fact">
-    <p>Mars has the largest dust storms in the solar system. They can last for months and cover the entire planet.</p>
+<body class="mars-theme">
+  <div class="stars-container">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
   </div>
-  <div class="fun-fact">
-    <p>Mars has two moons, Phobos and Deimos, which are small and irregularly shaped. They may be captured asteroids.</p>
-  </div>
-  
-  <h2>Explorations & Discoveries</h2>
-  <p>Mars has been explored more than any other planet beyond Earth. NASA's Perseverance rover landed in February 2021, joining the Curiosity rover which has been operating since 2012. These rovers are searching for signs of ancient microbial life.</p>
-  
-  <p>The first successful Mars mission was NASA's Mariner 4 flyby in 1965. Since then, numerous orbiters, landers, and rovers have explored the planet, including NASA's InSight lander which has detected marsquakes, providing evidence of seismic activity.</p>
-  
-  <h2>Key Statistics</h2>
-  <ul>
-    <li><strong>Diameter:</strong> 6,779 km</li>
-    <li><strong>Mass:</strong> 6.39 × 10^23 kg (0.107 Earth masses)</li>
-    <li><strong>Orbital Period:</strong> 687 Earth days</li>
-    <li><strong>Rotation Period:</strong> 24.6 hours</li>
-    <li><strong>Average Distance from Sun:</strong> 227.9 million km</li>
-    <li><strong>Surface Temperature Range:</strong> -153°C to 20°C</li>
-  </ul>
-  
-  <a href="../index.html" class="back-button">Back to Solar System</a>
+  <header>
+    <nav>
+      <a href="../index.html" class="back-button"><i class="fas fa-chevron-left"></i> Back to Solar System</a>
+      <div class="nav-controls">
+        <button id="sound-toggle"><i class="fas fa-volume-up"></i></button>
+        <button id="fullscreen-toggle"><i class="fas fa-expand"></i></button>
+      </div>
+    </nav>
+    <div class="planet-title">
+      <h1>Mars</h1>
+      <div class="planet-subtitle">Fourth Planet from the Sun</div>
+    </div>
+  </header>
+  <main>
+    <section class="planet-showcase">
+      <div id="planet-model-container"></div>
+      <div class="planet-controls">
+        <button class="control-btn" id="rotate-left"><i class="fas fa-undo"></i></button>
+        <button class="control-btn" id="rotate-right"><i class="fas fa-redo"></i></button>
+        <button class="control-btn" id="zoom-in"><i class="fas fa-search-plus"></i></button>
+        <button class="control-btn" id="zoom-out"><i class="fas fa-search-minus"></i></button>
+        <button class="control-btn" id="reset-view"><i class="fas fa-sync"></i></button>
+      </div>
+    </section>
+    <section class="info-navigation">
+      <button class="nav-tab active" data-tab="overview">Overview</button>
+      <button class="nav-tab" data-tab="composition">Composition</button>
+      <button class="nav-tab" data-tab="exploration">Exploration</button>
+      <button class="nav-tab" data-tab="fun-facts">Fun Facts</button>
+      <button class="nav-tab" data-tab="statistics">Statistics</button>
+    </section>
+    <section class="info-panels">
+      <div class="info-panel active" id="overview">
+        <div class="panel-content">
+          <h2><span class="highlight">Overview</span></h2>
+          <p>Mars is the fourth planet from the Sun and is known as the Red Planet. Its surface is covered in iron oxide dust, giving it a reddish appearance. Mars has the largest volcano and canyon in the solar system[3].</p>
+          <div class="info-card">
+            <div class="card-icon"><i class="fas fa-robot"></i></div>
+            <div class="card-content">
+              <h3>Home of Rovers</h3>
+              <p>Mars is the only planet solely inhabited by robots, with several rovers and landers exploring its surface[3].</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-panel" id="composition">
+        <div class="panel-content">
+          <h2><span class="highlight">Composition</span></h2>
+          <p>Mars is a terrestrial planet with a thin atmosphere, primarily carbon dioxide. Its surface is rocky, with polar ice caps of water and CO₂.</p>
+          <div class="composition-details">
+            <div class="composition-item">
+              <h3>Atmosphere</h3>
+              <p>95% CO₂, 3% N₂, 1.6% Ar, trace O₂ and H₂O</p>
+            </div>
+            <div class="composition-item">
+              <h3>Surface</h3>
+              <p>Basaltic rock, iron oxide dust, polar ice caps</p>
+            </div>
+            <div class="composition-item">
+              <h3>Core</h3>
+              <p>Possibly liquid iron-sulfur core</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-panel" id="exploration">
+        <div class="panel-content">
+          <h2><span class="highlight">Exploration</span></h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">1976</div>
+              <div class="timeline-content">
+                <h3>Viking Landers</h3>
+                <p>First successful landers on Mars, sent back surface images and data.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2012–</div>
+              <div class="timeline-content">
+                <h3>Curiosity Rover</h3>
+                <p>NASA's Curiosity rover has been exploring Gale Crater since 2012.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2020–</div>
+              <div class="timeline-content">
+                <h3>Perseverance Rover</h3>
+                <p>NASA's newest rover, Perseverance, searches for signs of ancient life and collects samples for future return[3].</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-panel" id="fun-facts">
+        <div class="panel-content">
+          <h2><span class="highlight">Fun Facts</span></h2>
+          <div class="fun-fact-grid">
+            <div class="fun-fact-card">
+              <div class="fun-fact-icon"><i class="fas fa-mountain"></i></div>
+              <h3>Tallest Volcano</h3>
+              <p>Olympus Mons is the tallest volcano in the solar system (21 km high).</p>
+            </div>
+            <div class="fun-fact-card">
+              <div class="fun-fact-icon"><i class="fas fa-water"></i></div>
+              <h3>Water Ice</h3>
+              <p>There is water ice at the Martian poles and possibly underground.</p>
+            </div>
+            <div class="fun-fact-card">
+              <div class="fun-fact-icon"><i class="fas fa-wind"></i></div>
+              <h3>Dust Storms</h3>
+              <p>Mars has planet-wide dust storms that can last for months.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-panel" id="statistics">
+        <div class="panel-content">
+          <h2><span class="highlight">Statistics</span></h2>
+          <div class="stat-comparison">
+            <div class="stat-item"><div class="stat-label">Diameter</div><div class="stat-value">6,779 km</div></div>
+            <div class="stat-item"><div class="stat-label">Mass</div><div class="stat-value">6.42 × 10²³ kg</div></div>
+            <div class="stat-item"><div class="stat-label">Day Length</div><div class="stat-value">24.6 hours</div></div>
+            <div class="stat-item"><div class="stat-label">Year Length</div><div class="stat-value">687 Earth days</div></div>
+            <div class="stat-item"><div class="stat-label">Avg. Distance from Sun</div><div class="stat-value">227.9 million km</div></div>
+            <div class="stat-item"><div class="stat-label">Surface Temp</div><div class="stat-value">-140°C to 30°C</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 3D CSS Solar System Explorer</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+  <script src="../js/planet-mars.js"></script>
 </body>
 </html>

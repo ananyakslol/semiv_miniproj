@@ -4,83 +4,137 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Neptune - Planet Details</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #e3f2fd;
-      color: #333;
-    }
-    h1 {
-      color: #0d47a1;
-      text-align: center;
-    }
-    h2 {
-      color: #1565c0;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-    .planet-image {
-      display: block;
-      margin: 20px auto;
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .fun-fact {
-      background: #bbdefb;
-      padding: 15px;
-      border-radius: 8px;
-      margin: 15px 0;
-    }
-    .back-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 15px;
-      background: #0d47a1;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-    .back-button:hover {
-      background: #1565c0;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../css/planet-styles.css">
 </head>
-<body>
-  <h1>Neptune</h1>
-  
-  <img src="../img/p-neptune.png" alt="Neptune" class="planet-image">
-  
-  <h2>About Neptune</h2>
-  <p>Neptune is the eighth and farthest known planet from the Sun in the Solar System. It is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. Neptune is 17 times the mass of Earth, and slightly more massive than its near-twin Uranus.</p>
-  
-  <h2>Fun Facts</h2>
-  <div class="fun-fact">
-    <p>Neptune has the strongest winds in the Solar System, reaching speeds of up to 2,100 km/h (1,300 mph).</p>
+<body class="neptune-theme">
+  <div class="stars-container">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
   </div>
-  <div class="fun-fact">
-    <p>Neptune was not discovered by telescopic observation but through mathematical prediction. Irregularities in Uranus's orbit led astronomers to predict Neptune's existence and location.</p>
-  </div>
-  
-  <h2>Explorations & Discoveries</h2>
-  <p>Voyager 2 is the only spacecraft to have visited Neptune. In August 1989, it flew by the planet, passing about 4,950 km above Neptune's north pole. This flyby provided the first close-up images of Neptune and its moons.</p>
-  
-  <p>During its Neptune encounter, Voyager 2 discovered six new moons, four new rings, and a "Great Dark Spot" similar to Jupiter's Great Red Spot. The Great Dark Spot has since disappeared, but new ones have formed, showing the dynamic nature of Neptune's atmosphere.</p>
-  
-  <h2>Key Statistics</h2>
-  <ul>
-    <li><strong>Diameter:</strong> 49,244 km (3.9 times Earth's diameter)</li>
-    <li><strong>Mass:</strong> 1.024 × 10^26 kg (17 Earth masses)</li>
-    <li><strong>Orbital Period:</strong> 165 Earth years</li>
-    <li><strong>Rotation Period:</strong> 16.1 hours</li>
-    <li><strong>Average Distance from Sun:</strong> 4.5 billion km</li>
-    <li><strong>Number of Moons:</strong> 14 known</li>
-  </ul>
-  
-  <a href="../index.html" class="back-button">Back to Solar System</a>
+  <header>
+    <nav>
+      <a href="../index.html" class="back-button"><i class="fas fa-chevron-left"></i> Back to Solar System</a>
+      <div class="nav-controls">
+        <button id="sound-toggle"><i class="fas fa-volume-up"></i></button>
+        <button id="fullscreen-toggle"><i class="fas fa-expand"></i></button>
+      </div>
+    </nav>
+    <div class="planet-title">
+      <h1>Neptune</h1>
+      <div class="planet-subtitle">Eighth Planet from the Sun</div>
+    </div>
+  </header>
+  <main>
+    <section class="planet-showcase">
+      <div id="planet-model-container"></div>
+      <div class="planet-controls">
+        <button class="control-btn" id="rotate-left"><i class="fas fa-undo"></i></button>
+        <button class="control-btn" id="rotate-right"><i class="fas fa-redo"></i></button>
+        <button class="control-btn" id="zoom-in"><i class="fas fa-search-plus"></i></button>
+        <button class="control-btn" id="zoom-out"><i class="fas fa-search-minus"></i></button>
+        <button class="control-btn" id="reset-view"><i class="fas fa-sync"></i></button>
+      </div>
+    </section>
+    <section class="info-navigation">
+      <button class="nav-tab active" data-tab="overview">Overview</button>
+      <button class="nav-tab" data-tab="composition">Composition</button>
+      <button class="nav-tab" data-tab="exploration">Exploration</button>
+      <button class="nav-tab" data-tab="fun-facts">Fun Facts</button>
+      <button class="nav-tab" data-tab="statistics">Statistics</button>
+    </section>
+    <section class="info-panels">
+      <div class="info-panel active" id="overview">
+        <div class="panel-content">
+          <h2><span class="highlight">Overview</span></h2>
+          <p>Neptune is the eighth and farthest known planet from the Sun. It is an ice giant with a deep blue color due to methane in its atmosphere. Neptune has the strongest winds in the solar system[7].</p>
+          <div class="info-card">
+            <div class="card-icon"><i class="fas fa-wind"></i></div>
+            <div class="card-content">
+              <h3>Supersonic Winds</h3>
+              <p>Winds on Neptune can reach up to 2,100 km/h (1,300 mph), the fastest in the solar system[7].</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-panel" id="composition">
+        <div class="panel-content">
+          <h2><span class="highlight">Composition</span></h2>
+          <p>Neptune is composed mainly of hydrogen, helium, and ices of water, ammonia, and methane.</p>
+          <div class="composition-details">
+            <div class="composition-item">
+              <h3>Atmosphere</h3>
+              <p>80% hydrogen, 19% helium, 1.5% methane</p>
+            </div>
+            <div class="composition-item">
+              <h3>Interior</h3>
+              <p>Water, ammonia, and methane ices</p>
+            </div>
+            <div class="composition-item">
+              <h3>Core</h3>
+              <p>Rock and ice</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-panel" id="exploration">
+        <div class="panel-content">
+          <h2><span class="highlight">Exploration</span></h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">1989</div>
+              <div class="timeline-content">
+                <h3>Voyager 2 Flyby</h3>
+                <p>Voyager 2 is the only spacecraft to visit Neptune, discovering new moons and the "Great Dark Spot"[7].</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-panel" id="fun-facts">
+        <div class="panel-content">
+          <h2><span class="highlight">Fun Facts</span></h2>
+          <div class="fun-fact-grid">
+            <div class="fun-fact-card">
+              <div class="fun-fact-icon"><i class="fas fa-sync-alt"></i></div>
+              <h3>Dynamic Atmosphere</h3>
+              <p>Neptune's storms come and go, including the famous Great Dark Spot.</p>
+            </div>
+            <div class="fun-fact-card">
+              <div class="fun-fact-icon"><i class="fas fa-moon"></i></div>
+              <h3>Many Moons</h3>
+              <p>Neptune has 14 known moons, including Triton, which orbits backward.</p>
+            </div>
+            <div class="fun-fact-card">
+              <div class="fun-fact-icon"><i class="fas fa-water"></i></div>
+              <h3>Ice Giant</h3>
+              <p>Neptune is called an "ice giant" because of its icy interior.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-panel" id="statistics">
+        <div class="panel-content">
+          <h2><span class="highlight">Statistics</span></h2>
+          <div class="stat-comparison">
+            <div class="stat-item"><div class="stat-label">Diameter</div><div class="stat-value">49,244 km</div></div>
+            <div class="stat-item"><div class="stat-label">Mass</div><div class="stat-value">1.02 × 10²⁶ kg</div></div>
+            <div class="stat-item"><div class="stat-label">Day Length</div><div class="stat-value">16.1 hours</div></div>
+            <div class="stat-item"><div class="stat-label">Year Length</div><div class="stat-value">164.8 Earth years</div></div>
+            <div class="stat-item"><div class="stat-label">Avg. Distance from Sun</div><div class="stat-value">4.5 billion km</div></div>
+            <div class="stat-item"><div class="stat-label">Surface Temp</div><div class="stat-value">-214°C</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 3D CSS Solar System Explorer</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+  <script src="../js/planet-neptune.js"></script>
 </body>
 </html>
