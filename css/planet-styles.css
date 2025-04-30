@@ -17,12 +17,16 @@
 }
 
 /* Venus */
-.venus-theme {
-  --primary-color: #D4AF37;
-  --secondary-color: #FFD700;
-  --accent-color: #FFF8DC;
-  --glow-color: rgba(212, 175, 55, 0.6);
+.venus-image {
+  display: block;
+  margin: 40px auto 0 auto;
+  max-height: 340px;
+  max-width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 30px var(--glow-color);
+  background: var(--panel-bg);
 }
+
 
 /* Earth */
 .earth-theme {

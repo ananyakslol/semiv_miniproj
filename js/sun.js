@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
     scene.add(dirLight);
   
     const geometry = new THREE.SphereGeometry(1, 64, 64);
-    const texture = new THREE.TextureLoader().load('/img/p-venus.png');
+    const texture = new THREE.TextureLoader().load('../img/p-jupiter.png');
     const material = new THREE.MeshPhongMaterial({ map: texture });
-    const venus = new THREE.Mesh(geometry, material);
-    scene.add(venus);
+    const jupiter = new THREE.Mesh(geometry, material);
+    scene.add(jupiter);
   
     const controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
@@ -38,15 +38,15 @@ document.addEventListener('DOMContentLoaded', function() {
     controls.minDistance = 1.5;
     controls.maxDistance = 4;
   
-    document.getElementById('rotate-left').onclick = () => venus.rotation.y -= 0.5;
-    document.getElementById('rotate-right').onclick = () => venus.rotation.y += 0.5;
+    document.getElementById('rotate-left').onclick = () => jupiter.rotation.y -= 0.5;
+    document.getElementById('rotate-right').onclick = () => jupiter.rotation.y += 0.5;
     document.getElementById('zoom-in').onclick = () => { if (camera.position.z > 1.6) camera.position.z -= 0.3; };
     document.getElementById('zoom-out').onclick = () => { if (camera.position.z < 4) camera.position.z += 0.3; };
-    document.getElementById('reset-view').onclick = () => { camera.position.set(0,0,2); venus.rotation.set(0,0,0); };
+    document.getElementById('reset-view').onclick = () => { camera.position.set(0,0,2); jupiter.rotation.set(0,0,0); };
   
     function animate() {
       requestAnimationFrame(animate);
-      venus.rotation.y += 0.001;
+      jupiter.rotation.y += 0.003;
       controls.update();
       renderer.render(scene, camera);
     }
