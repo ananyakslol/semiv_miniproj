@@ -7,6 +7,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="../css/planet-styles.css">
+  <style>
+    /* Optional: Add this if you want to ensure the Venus image is styled even if CSS cache is old */
+    .mars-image {
+      display: block;
+      margin: 40px auto 0 auto;
+      max-height: 340px;
+      max-width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 30px var(--glow-color);
+      background: var(--panel-bg);
+    }
+  </style>
 </head>
 <body class="mars-theme">
   <div class="stars-container">
@@ -17,26 +29,21 @@
   <header>
     <nav>
       <a href="../index.html" class="back-button"><i class="fas fa-chevron-left"></i> Back to Solar System</a>
-      <div class="nav-controls">
-        <button id="sound-toggle"><i class="fas fa-volume-up"></i></button>
-        <button id="fullscreen-toggle"><i class="fas fa-expand"></i></button>
-      </div>
+      
     </nav>
     <div class="planet-title">
-      <h1>Mars</h1>
+      <h1>MARS</h1>
       <div class="planet-subtitle">Fourth Planet from the Sun</div>
     </div>
   </header>
   <main>
     <section class="planet-showcase">
-      <div id="planet-model-container"></div>
-      <div class="planet-controls">
-        <button class="control-btn" id="rotate-left"><i class="fas fa-undo"></i></button>
-        <button class="control-btn" id="rotate-right"><i class="fas fa-redo"></i></button>
-        <button class="control-btn" id="zoom-in"><i class="fas fa-search-plus"></i></button>
-        <button class="control-btn" id="zoom-out"><i class="fas fa-search-minus"></i></button>
-        <button class="control-btn" id="reset-view"><i class="fas fa-sync"></i></button>
-      </div>
+      <!-- Venus image instead of 3D viewer -->
+      <img 
+        src="https://www.nasa.gov/wp-content/uploads/2023/03/hs-2005-34-j-full_jpg.jpg"
+        alt="Mars"
+        class="mars-image"
+      >
     </section>
     <section class="info-navigation">
       <button class="nav-tab active" data-tab="overview">Overview</button>
@@ -49,12 +56,18 @@
       <div class="info-panel active" id="overview">
         <div class="panel-content">
           <h2><span class="highlight">Overview</span></h2>
-          <p>Mars is the fourth planet from the Sun and is known as the Red Planet. Its surface is covered in iron oxide dust, giving it a reddish appearance. Mars has the largest volcano and canyon in the solar system[3].</p>
+          <p>Mars, often called the "Red Planet," is the fourth planet from the Sun and the second smallest in the solar system. It is located about 227.9 million kilometers from the Sun and is known for its reddish appearance, which results from iron oxide (rust) on its surface. Mars is a terrestrial planet with a thin atmosphere, composed mostly of carbon dioxide, which makes it inhospitable to life as we know it. Despite this, Mars is a primary focus for exploration due to its potential for past or present life and its similarities to Earth.
+
+            Mars has a day length almost identical to Earth’s, taking 24.6 hours to complete one rotation, but its year lasts almost twice as long, at 687 Earth days. The planet's surface features vast plains, towering volcanoes like Olympus Mons (the largest in the solar system), and the longest canyon, Valles Marineris. Evidence suggests that Mars once had liquid water, and scientists believe it may have supported microbial life in the past. Today, however, water exists mainly as ice, with some trace amounts in the atmosphere.
+            
+            The Martian atmosphere, much thinner than Earth’s, offers little protection from radiation or temperature fluctuations, which can drop to -125°C (-195°F) at night. Despite these harsh conditions, Mars has been a target for numerous space missions, including rovers like Curiosity and Perseverance, which search for signs of ancient life and collect data on the planet’s geology and climate.
+            
+            In recent years, Mars has gained significant interest for potential future human exploration and colonization. Its similarities to Earth, such as its length of day and presence of water ice, make it a prime candidate for the next frontier in space exploration.</p>
           <div class="info-card">
-            <div class="card-icon"><i class="fas fa-robot"></i></div>
+            <div class="card-icon"><i class="fas fa-wind"></i></div>
             <div class="card-content">
-              <h3>Home of Rovers</h3>
-              <p>Mars is the only planet solely inhabited by robots, with several rovers and landers exploring its surface[3].</p>
+              <h3>My Name?</h3>
+              <p>Mars was named after the Roman god of war due to its reddish appearance, which reminded ancient observers of blood.</p>
             </div>
           </div>
         </div>
@@ -62,25 +75,40 @@
       <div class="info-panel" id="composition">
         <div class="panel-content">
           <h2><span class="highlight">Composition</span></h2>
-          <p>Mars is a terrestrial planet with a thin atmosphere, primarily carbon dioxide. Its surface is rocky, with polar ice caps of water and CO₂.</p>
+          <p>Mars has a thin atmosphere and a dusty, rocky surface. Its reddish color comes from iron oxide (rust) in the soil, and it has a core that may be partially molten.</p>
           <div class="composition-details">
             <div class="composition-item">
               <h3>Atmosphere</h3>
-              <p>95% CO₂, 3% N₂, 1.6% Ar, trace O₂ and H₂O</p>
+              <p>95% CO₂, 3% N₂, 1.6% Ar, trace oxygen and water vapor</p>
             </div>
             <div class="composition-item">
               <h3>Surface</h3>
-              <p>Basaltic rock, iron oxide dust, polar ice caps</p>
+              <p>Rocky terrain with dust, volcanoes, canyons, and polar ice caps</p>
             </div>
             <div class="composition-item">
               <h3>Core</h3>
-              <p>Possibly liquid iron-sulfur core</p>
+              <p>Iron, sulfur, and nickel core — possibly molten at its center</p>
             </div>
           </div>
         </div>
-
+      </div>
+      <div class="info-panel" id="exploration">
+        <div class="panel-content">
+          <h2><span class="highlight">Exploration</span></h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">1970s-80s</div>
+              <div class="timeline-content">
+                <h3>Venera Program</h3>
+                <p>Soviet landers sent back the first images from the surface of Venus.</p>
+              </div>
             </div>
-    
+            <div class="timeline-item">
+              <div class="timeline-date">2006–</div>
+              <div class="timeline-content">
+                <h3>Akatsuki</h3>
+                <p>Japan's Akatsuki orbiter studies Venus's atmosphere, weather, and volcanic activity.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -90,19 +118,19 @@
           <h2><span class="highlight">Fun Facts</span></h2>
           <div class="fun-fact-grid">
             <div class="fun-fact-card">
-              <div class="fun-fact-icon"><i class="fas fa-mountain"></i></div>
+              <div class="fun-fact-icon"><i class="fas fa-fire"></i></div>
+              <h3>Frozen Water</h3>
+              <p>Mars has polar ice caps made of water and carbon dioxide.</p>
+            </div>
+            <div class="fun-fact-card">
+              <div class="fun-fact-icon"><i class="fas fa-sync-alt"></i></div>
               <h3>Tallest Volcano</h3>
-              <p>Olympus Mons is the tallest volcano in the solar system (21 km high).</p>
+              <p>Olympus Mons on Mars is the tallest volcano in the solar system.</p>
             </div>
             <div class="fun-fact-card">
-              <div class="fun-fact-icon"><i class="fas fa-water"></i></div>
-              <h3>Water Ice</h3>
-              <p>There is water ice at the Martian poles and possibly underground.</p>
-            </div>
-            <div class="fun-fact-card">
-              <div class="fun-fact-icon"><i class="fas fa-wind"></i></div>
+              <div class="fun-fact-icon"><i class="fas fa-cloud"></i></div>
               <h3>Dust Storms</h3>
-              <p>Mars has planet-wide dust storms that can last for months.</p>
+              <p>Mars experiences planet-wide dust storms that can last for months.</p>
             </div>
           </div>
         </div>
@@ -113,20 +141,33 @@
           <div class="stat-comparison">
             <div class="stat-item"><div class="stat-label">Diameter</div><div class="stat-value">6,779 km</div></div>
             <div class="stat-item"><div class="stat-label">Mass</div><div class="stat-value">6.42 × 10²³ kg</div></div>
-            <div class="stat-item"><div class="stat-label">Day Length</div><div class="stat-value">24.6 hours</div></div>
+            <div class="stat-item"><div class="stat-label">Day Length</div><div class="stat-value">24.6 Hours</div></div>
             <div class="stat-item"><div class="stat-label">Year Length</div><div class="stat-value">687 Earth days</div></div>
             <div class="stat-item"><div class="stat-label">Avg. Distance from Sun</div><div class="stat-value">227.9 million km</div></div>
-            <div class="stat-item"><div class="stat-label">Surface Temp</div><div class="stat-value">-140°C to 30°C</div></div>
+            <div class="stat-item"><div class="stat-label">Surface Temp</div><div class="stat-value">-60°C</div></div>
           </div>
         </div>
       </div>
     </section>
   </main>
   <footer>
-    <p>© 2025 3D CSS Solar System Explorer</p>
+    <!-- <p>© 2025 3D CSS Solar System Explorer</p> -->
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
-  <script src="../js/planet-mars.js"></script>
+  <!-- No 3D scripts needed -->
+  <script>
+    // Tab navigation logic
+    document.addEventListener('DOMContentLoaded', function() {
+      const navTabs = document.querySelectorAll('.nav-tab');
+      const infoPanels = document.querySelectorAll('.info-panel');
+      navTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          navTabs.forEach(t => t.classList.remove('active'));
+          infoPanels.forEach(p => p.classList.remove('active'));
+          this.classList.add('active');
+          document.getElementById(this.getAttribute('data-tab')).classList.add('active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>

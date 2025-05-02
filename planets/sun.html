@@ -3,10 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sun</title>
+  <title>Earth - Planet Details</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="../css/planet-styles.css">
+  <style>
+    /* Optional: Add this if you want to ensure the Venus image is styled even if CSS cache is old */
+    .sun-image {
+      display: block;
+      margin: 40px auto 0 auto;
+      max-height: 340px;
+      max-width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 30px var(--glow-color);
+      background: var(--panel-bg);
+    }
+  </style>
 </head>
 <body class="sun-theme">
   <div class="stars-container">
@@ -17,26 +29,21 @@
   <header>
     <nav>
       <a href="../index.html" class="back-button"><i class="fas fa-chevron-left"></i> Back to Solar System</a>
-      <div class="nav-controls">
-        <button id="sound-toggle"><i class="fas fa-volume-up"></i></button>
-        <button id="fullscreen-toggle"><i class="fas fa-expand"></i></button>
-      </div>
+      
     </nav>
     <div class="planet-title">
-      <h1>Sun</h1>
-      <div class="planet-subtitle">Star of our Solar System</div>
+      <h1>SUN</h1>
+      <div class="planet-subtitle">The Star of the Solar System</div>
     </div>
   </header>
   <main>
     <section class="planet-showcase">
-      <div id="planet-model-container"></div>
-      <div class="planet-controls">
-        <button class="control-btn" id="rotate-left"><i class="fas fa-undo"></i></button>
-        <button class="control-btn" id="rotate-right"><i class="fas fa-redo"></i></button>
-        <button class="control-btn" id="zoom-in"><i class="fas fa-search-plus"></i></button>
-        <button class="control-btn" id="zoom-out"><i class="fas fa-search-minus"></i></button>
-        <button class="control-btn" id="reset-view"><i class="fas fa-sync"></i></button>
-      </div>
+      <!-- Venus image instead of 3D viewer -->
+      <img 
+        src="https://i.pinimg.com/originals/d0/ba/16/d0ba16749ea24832c32bab246308fbef.jpg"
+        alt="Sun"
+        class="sun-image"
+      >
     </section>
     <section class="info-navigation">
       <button class="nav-tab active" data-tab="overview">Overview</button>
@@ -49,12 +56,12 @@
       <div class="info-panel active" id="overview">
         <div class="panel-content">
           <h2><span class="highlight">Overview</span></h2>
-          <p>The Sun is the centre of our solar system, around which all the other planets revolve. It is 4.6 billion yeats old and consists of 99.86% of the solar system's mass.</p>
+          <p>The Sun is a massive ball of hot, glowing gas at the center of our solar system. It is the primary source of heat and light for all the planets. Without the Sun, life on Earth couldn’t exist. Its gravity is what holds the solar system together, keeping the planets, moons, asteroids, and comets in their orbits. Even though it looks small from Earth, the Sun is enormous — about 1.39 million kilometers wide. You could fit over 100 Earths across its diameter and over a million Earths inside its volume. The Sun is a G-type main-sequence star (or "yellow dwarf") and is powered by nuclear fusion in its core. This process turns hydrogen into helium, releasing an enormous amount of energy in the form of light and heat. The Sun has several layers, each with different properties. The innermost core is where fusion happens. Surrounding it are the radiative and convective zones, where energy moves outward. The surface, or photosphere, is what we see from Earth. Above that are the chromosphere and corona, the Sun’s outer atmosphere, which can be seen during a solar eclipse as a glowing halo. The Sun goes through cycles of activity every 11 years, including increases and decreases in sunspots, solar flares, and coronal mass ejections. These events can affect space weather and sometimes interfere with satellite communications or power grids on Earth. Despite being so familiar, the Sun remains a focus of scientific study, especially regarding its influence on Earth and the possibility of solar storms.</p>
           <div class="info-card">
-            <div class="card-icon"><i class="fas fa-ring"></i></div>
+            <div class="card-icon"><i class="fas fa-wind"></i></div>
             <div class="card-content">
-              <h3>Iconic Rings</h3>
-              <p>Saturn's rings are made mostly of ice particles, with some rock and dust[5].</p>
+              <h3>My Name?</h3>
+              <p>Earth is the only planet not named after a Greek or Roman deity. Its name comes from Old English and Germanic words meaning “ground” or “soil.”</p>
             </div>
           </div>
         </div>
@@ -62,19 +69,19 @@
       <div class="info-panel" id="composition">
         <div class="panel-content">
           <h2><span class="highlight">Composition</span></h2>
-          <p>Saturn is mostly hydrogen and helium, with a rocky core, metallic hydrogen layer, and an outer layer of molecular hydrogen.</p>
+          <p>Earth has a balanced structure that supports life: a breathable atmosphere, a solid surface with water and land, and a dense core that generates a magnetic field.</p>
           <div class="composition-details">
             <div class="composition-item">
               <h3>Atmosphere</h3>
-              <p>96% hydrogen, 3% helium, trace methane, ammonia, water vapor</p>
+              <p>78% nitrogen, 21% oxygen, 1% other gases (argon, CO₂, etc.)</p>
+            </div>
+            <div class="composition-item">
+              <h3>Surface</h3>
+              <p>Continents, oceans, forests, mountains, deserts, and polar ice caps</p>
             </div>
             <div class="composition-item">
               <h3>Core</h3>
-              <p>Rocky core surrounded by metallic hydrogen</p>
-            </div>
-            <div class="composition-item">
-              <h3>Rings</h3>
-              <p>Ice, rock, and dust particles</p>
+              <p>Solid inner core and molten outer core of iron and nickel</p>
             </div>
           </div>
         </div>
@@ -84,17 +91,17 @@
           <h2><span class="highlight">Exploration</span></h2>
           <div class="timeline">
             <div class="timeline-item">
-              <div class="timeline-date">1979–</div>
+              <div class="timeline-date">1970s-80s</div>
               <div class="timeline-content">
-                <h3>Pioneer, Voyager, Cassini</h3>
-                <p>Voyager and Cassini provided detailed images and data about Saturn and its rings[5].</p>
+                <h3>Venera Program</h3>
+                <p>Soviet landers sent back the first images from the surface of Venus.</p>
               </div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-date">2004–2017</div>
+              <div class="timeline-date">2006–</div>
               <div class="timeline-content">
-                <h3>Cassini Orbiter</h3>
-                <p>Cassini orbited Saturn for 13 years, studying its rings, atmosphere, and moons.</p>
+                <h3>Akatsuki</h3>
+                <p>Japan's Akatsuki orbiter studies Venus's atmosphere, weather, and volcanic activity.</p>
               </div>
             </div>
           </div>
@@ -105,19 +112,19 @@
           <h2><span class="highlight">Fun Facts</span></h2>
           <div class="fun-fact-grid">
             <div class="fun-fact-card">
-              <div class="fun-fact-icon"><i class="fas fa-water"></i></div>
-              <h3>Would Float</h3>
-              <p>Saturn is less dense than water and would float in a giant bathtub!</p>
+              <div class="fun-fact-icon"><i class="fas fa-fire"></i></div>
+              <h3>Magnetic Shield</h3>
+              <p>Earth’s magnetic field, created by its spinning iron core, helps protect us from solar wind and cosmic radiation</p>
             </div>
             <div class="fun-fact-card">
-              <div class="fun-fact-icon"><i class="fas fa-moon"></i></div>
-              <h3>Many Moons</h3>
-              <p>Saturn has at least 274 moons and moonlets, including Titan, the second-largest moon in the solar system[5].</p>
+              <div class="fun-fact-icon"><i class="fas fa-sync-alt"></i></div>
+              <h3>Synchronised Spin</h3>
+              <p>The Moon always shows the same face to Earth — it’s tidally locked, meaning its rotation period matches its orbit.</p>
             </div>
             <div class="fun-fact-card">
-              <div class="fun-fact-icon"><i class="fas fa-wind"></i></div>
-              <h3>Super Winds</h3>
-              <p>Winds on Saturn can reach 1,800 km/h (1,100 mph).</p>
+              <div class="fun-fact-icon"><i class="fas fa-cloud"></i></div>
+              <h3>One Moon</h3>
+              <p>Earth has one natural satellite — the Moon, which affects tides and stabilizes our tilt.</p>
             </div>
           </div>
         </div>
@@ -126,22 +133,35 @@
         <div class="panel-content">
           <h2><span class="highlight">Statistics</span></h2>
           <div class="stat-comparison">
-            <div class="stat-item"><div class="stat-label">Diameter</div><div class="stat-value">116,460 km</div></div>
-            <div class="stat-item"><div class="stat-label">Mass</div><div class="stat-value">5.68 × 10²⁶ kg</div></div>
-            <div class="stat-item"><div class="stat-label">Day Length</div><div class="stat-value">10.7 hours</div></div>
-            <div class="stat-item"><div class="stat-label">Year Length</div><div class="stat-value">29.45 Earth years</div></div>
-            <div class="stat-item"><div class="stat-label">Avg. Distance from Sun</div><div class="stat-value">1.43 billion km</div></div>
-            <div class="stat-item"><div class="stat-label">Surface Temp</div><div class="stat-value">-139°C</div></div>
+            <div class="stat-item"><div class="stat-label">Diameter</div><div class="stat-value">12,742 km</div></div>
+            <div class="stat-item"><div class="stat-label">Mass</div><div class="stat-value">5.97 × 10²⁴ kg</div></div>
+            <div class="stat-item"><div class="stat-label">Day Length</div><div class="stat-value">24 Hours</div></div>
+            <div class="stat-item"><div class="stat-label">Year Length</div><div class="stat-value">365.25 days</div></div>
+            <div class="stat-item"><div class="stat-label">Avg. Distance from Sun</div><div class="stat-value">149.6 million km</div></div>
+            <div class="stat-item"><div class="stat-label">Surface Temp</div><div class="stat-value">~15°C</div></div>
           </div>
         </div>
       </div>
     </section>
   </main>
   <footer>
-    <p>© 2025 3D CSS Solar System Explorer</p>
+    <!-- <p>© 2025 3D CSS Solar System Explorer</p> -->
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
-  <script src="../js/planet-saturn.js"></script>
+  <!-- No 3D scripts needed -->
+  <script>
+    // Tab navigation logic
+    document.addEventListener('DOMContentLoaded', function() {
+      const navTabs = document.querySelectorAll('.nav-tab');
+      const infoPanels = document.querySelectorAll('.info-panel');
+      navTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          navTabs.forEach(t => t.classList.remove('active'));
+          infoPanels.forEach(p => p.classList.remove('active'));
+          this.classList.add('active');
+          document.getElementById(this.getAttribute('data-tab')).classList.add('active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>

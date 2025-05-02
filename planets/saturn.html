@@ -7,8 +7,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="../css/planet-styles.css">
+  <style>
+    /* Optional: Add this if you want to ensure the Venus image is styled even if CSS cache is old */
+    .venus-image {
+      display: block;
+      margin: 40px auto 0 auto;
+      max-height: 340px;
+      max-width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 30px var(--glow-color);
+      background: var(--panel-bg);
+    }
+  </style>
 </head>
-<body class="saturn-theme">
+<body class="venus-theme">
   <div class="stars-container">
     <div id="stars"></div>
     <div id="stars2"></div>
@@ -17,26 +29,21 @@
   <header>
     <nav>
       <a href="../index.html" class="back-button"><i class="fas fa-chevron-left"></i> Back to Solar System</a>
-      <div class="nav-controls">
-        <button id="sound-toggle"><i class="fas fa-volume-up"></i></button>
-        <button id="fullscreen-toggle"><i class="fas fa-expand"></i></button>
-      </div>
+      
     </nav>
     <div class="planet-title">
-      <h1>Saturn</h1>
+      <h1>SATURN</h1>
       <div class="planet-subtitle">Sixth Planet from the Sun</div>
     </div>
   </header>
   <main>
     <section class="planet-showcase">
-      <div id="planet-model-container"></div>
-      <div class="planet-controls">
-        <button class="control-btn" id="rotate-left"><i class="fas fa-undo"></i></button>
-        <button class="control-btn" id="rotate-right"><i class="fas fa-redo"></i></button>
-        <button class="control-btn" id="zoom-in"><i class="fas fa-search-plus"></i></button>
-        <button class="control-btn" id="zoom-out"><i class="fas fa-search-minus"></i></button>
-        <button class="control-btn" id="reset-view"><i class="fas fa-sync"></i></button>
-      </div>
+      <!-- Venus image instead of 3D viewer -->
+      <img 
+        src="https://photojournal.jpl.nasa.gov/jpegMod/PIA12567_modest.jpg"
+        alt="Saturn"
+        class="saturn-image"
+      >
     </section>
     <section class="info-navigation">
       <button class="nav-tab active" data-tab="overview">Overview</button>
@@ -49,12 +56,18 @@
       <div class="info-panel active" id="overview">
         <div class="panel-content">
           <h2><span class="highlight">Overview</span></h2>
-          <p>Saturn is the sixth planet from the Sun and the second-largest in the solar system, famous for its stunning rings. It is a gas giant with a pale yellow hue due to ammonia crystals in its atmosphere[5].</p>
+          <p>Saturn, the sixth planet from the Sun, is the second largest planet in the solar system and is most famous for its stunning system of rings. Located about 1.43 billion kilometers from the Sun, Saturn is a gas giant composed mainly of hydrogen and helium. Its rings, made of ice particles and dust, are its most distinguishing feature and are visible even through small telescopes. These rings extend thousands of kilometers from the planet but are only a few hundred meters thick.
+
+            A day on Saturn is only about 10.7 hours long, but its year lasts nearly 30 Earth years, making it one of the longest years in the solar system. Saturn’s atmosphere is primarily composed of hydrogen, helium, and traces of methane, with strong winds and storms that can reach speeds of up to 1,800 kilometers per hour (1,100 mph). The planet has a distinctive yellowish hue due to the presence of ammonia clouds in its atmosphere.
+            
+            Saturn has 83 confirmed moons, with Titan being the largest and most fascinating. Titan is the second-largest moon in the solar system and has a thick atmosphere composed of nitrogen, with lakes and rivers of liquid methane. Scientists are keen to explore Titan further, as its conditions may resemble those of early Earth.
+            
+            The planet’s magnetic field is 578 times stronger than Earth’s, and its powerful gravity is a key factor in maintaining its iconic ring system. Saturn has been the target of multiple space missions, including NASA’s Cassini mission, which spent 13 years studying the planet, its rings, and its moons.</p>
           <div class="info-card">
-            <div class="card-icon"><i class="fas fa-ring"></i></div>
+            <div class="card-icon"><i class="fas fa-wind"></i></div>
             <div class="card-content">
-              <h3>Iconic Rings</h3>
-              <p>Saturn's rings are made mostly of ice particles, with some rock and dust[5].</p>
+              <h3>My Name?</h3>
+              <p>Saturn was named after the Roman god of agriculture and time, and he was also the father of Jupiter in mythology.</p>
             </div>
           </div>
         </div>
@@ -62,19 +75,19 @@
       <div class="info-panel" id="composition">
         <div class="panel-content">
           <h2><span class="highlight">Composition</span></h2>
-          <p>Saturn is mostly hydrogen and helium, with a rocky core, metallic hydrogen layer, and an outer layer of molecular hydrogen.</p>
+          <p>Saturn, another gas giant, has a thick atmosphere of hydrogen and helium with fast-moving winds. Its interior is made of compressed gas and a small core.</p>
           <div class="composition-details">
             <div class="composition-item">
               <h3>Atmosphere</h3>
-              <p>96% hydrogen, 3% helium, trace methane, ammonia, water vapor</p>
+              <p>96% hydrogen, 3% helium, trace gases including methane and ammonia</p>
+            </div>
+            <div class="composition-item">
+              <h3>Surface</h3>
+              <p>No true surface — visible “surface” is upper cloud layers</p>
             </div>
             <div class="composition-item">
               <h3>Core</h3>
-              <p>Rocky core surrounded by metallic hydrogen</p>
-            </div>
-            <div class="composition-item">
-              <h3>Rings</h3>
-              <p>Ice, rock, and dust particles</p>
+              <p>Dense core of rock and ice, surrounded by metallic hydrogen</p>
             </div>
           </div>
         </div>
@@ -84,17 +97,17 @@
           <h2><span class="highlight">Exploration</span></h2>
           <div class="timeline">
             <div class="timeline-item">
-              <div class="timeline-date">1979–</div>
+              <div class="timeline-date">1970s-80s</div>
               <div class="timeline-content">
-                <h3>Pioneer, Voyager, Cassini</h3>
-                <p>Voyager and Cassini provided detailed images and data about Saturn and its rings[5].</p>
+                <h3>Venera Program</h3>
+                <p>Soviet landers sent back the first images from the surface of Venus.</p>
               </div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-date">2004–2017</div>
+              <div class="timeline-date">2006–</div>
               <div class="timeline-content">
-                <h3>Cassini Orbiter</h3>
-                <p>Cassini orbited Saturn for 13 years, studying its rings, atmosphere, and moons.</p>
+                <h3>Akatsuki</h3>
+                <p>Japan's Akatsuki orbiter studies Venus's atmosphere, weather, and volcanic activity.</p>
               </div>
             </div>
           </div>
@@ -105,19 +118,19 @@
           <h2><span class="highlight">Fun Facts</span></h2>
           <div class="fun-fact-grid">
             <div class="fun-fact-card">
-              <div class="fun-fact-icon"><i class="fas fa-water"></i></div>
-              <h3>Would Float</h3>
-              <p>Saturn is less dense than water and would float in a giant bathtub!</p>
+              <div class="fun-fact-icon"><i class="fas fa-fire"></i></div>
+              <h3>Iconic Rings</h3>
+              <p>Saturn’s rings are made of ice and rock and stretch over 280,000 km wide.</p>
             </div>
             <div class="fun-fact-card">
-              <div class="fun-fact-icon"><i class="fas fa-moon"></i></div>
-              <h3>Many Moons</h3>
-              <p>Saturn has at least 274 moons and moonlets, including Titan, the second-largest moon in the solar system[5].</p>
+              <div class="fun-fact-icon"><i class="fas fa-sync-alt"></i></div>
+              <h3>Fast Winds</h3>
+              <p>Winds on Saturn can reach speeds of 1,800 km/h.</p>
             </div>
             <div class="fun-fact-card">
-              <div class="fun-fact-icon"><i class="fas fa-wind"></i></div>
-              <h3>Super Winds</h3>
-              <p>Winds on Saturn can reach 1,800 km/h (1,100 mph).</p>
+              <div class="fun-fact-icon"><i class="fas fa-cloud"></i></div>
+              <h3>Low Density</h3>
+              <p>Saturn is so light it would float in water (if you could find a big enough tub!).</p>
             </div>
           </div>
         </div>
@@ -129,19 +142,32 @@
             <div class="stat-item"><div class="stat-label">Diameter</div><div class="stat-value">116,460 km</div></div>
             <div class="stat-item"><div class="stat-label">Mass</div><div class="stat-value">5.68 × 10²⁶ kg</div></div>
             <div class="stat-item"><div class="stat-label">Day Length</div><div class="stat-value">10.7 hours</div></div>
-            <div class="stat-item"><div class="stat-label">Year Length</div><div class="stat-value">29.45 Earth years</div></div>
+            <div class="stat-item"><div class="stat-label">Year Length</div><div class="stat-value">29.5 Earth years</div></div>
             <div class="stat-item"><div class="stat-label">Avg. Distance from Sun</div><div class="stat-value">1.43 billion km</div></div>
-            <div class="stat-item"><div class="stat-label">Surface Temp</div><div class="stat-value">-139°C</div></div>
+            <div class="stat-item"><div class="stat-label">Surface Temp</div><div class="stat-value">-178°C</div></div>
           </div>
         </div>
       </div>
     </section>
   </main>
   <footer>
-    <p>© 2025 3D CSS Solar System Explorer</p>
+    <!-- <p>© 2025 3D CSS Solar System Explorer</p> -->
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
-  <script src="../js/planet-saturn.js"></script>
+  <!-- No 3D scripts needed -->
+  <script>
+    // Tab navigation logic
+    document.addEventListener('DOMContentLoaded', function() {
+      const navTabs = document.querySelectorAll('.nav-tab');
+      const infoPanels = document.querySelectorAll('.info-panel');
+      navTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          navTabs.forEach(t => t.classList.remove('active'));
+          infoPanels.forEach(p => p.classList.remove('active'));
+          this.classList.add('active');
+          document.getElementById(this.getAttribute('data-tab')).classList.add('active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>

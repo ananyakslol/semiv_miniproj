@@ -1,14 +1,14 @@
 :root {
   --text-color: #e0e0e0;
-  --background-dark: #0a0a0a;
-  --background-light: #1a1a1a;
+  --background-dark: #000000bf;
+  --background-light: #000000bf;
   --panel-bg: rgba(10, 10, 10, 0.8);
   --card-bg: rgba(26, 26, 26, 0.9);
   --border-radius: 12px;
   --transition: 0.3s cubic-bezier(.4,2,.6,1);
 }
 
-/* Mercury */
+ Mercury 
 .mercury-theme {
   --primary-color: #717E73;
   --secondary-color: #A9A9A9;
@@ -16,7 +16,7 @@
   --glow-color: rgba(113, 126, 115, 0.6);
 }
 
-/* Venus */
+ Venus
 .venus-image {
   display: block;
   margin: 40px auto 0 auto;
@@ -28,13 +28,35 @@
 }
 
 
-/* Earth */
+ Earth 
 .earth-theme {
-  --primary-color: #2e7d32;
-  --secondary-color: #1b5e20;
-  --accent-color: #4CAF50;
-  --glow-color: rgba(76, 175, 80, 0.6);
+  --primary-color: #2e617d;
+  --secondary-color: #1b3d5e;
+  --accent-color: #4c72af;
+  --glow-color: rgba(76, 109, 175, 0.6);
+
+  position: relative;
+  height: 400px;
+  margin-bottom: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 30px var(--glow-color);
+  background: rgba(0,0,0,0.3);
+  overflow: hidden;
+  border: 1px solid var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
+
+@media (max-width: 900px) {
+  .planet-showcase { height: 260px; }
+}
+@media (max-width: 600px) {
+  .planet-showcase { height: 180px; }
+}
+
 
 /* Mars */
 .mars-theme {
@@ -176,6 +198,17 @@ a:hover {
   display: flex;
   gap: 15px;
   z-index: 10;
+}
+
+.planet-full-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  
+  object-position: center;
+  display: block;
+  border-radius: 0;     
+  background: transparent;
+  box-shadow: none;
 }
 .control-btn {
   width: 44px; height: 44px;

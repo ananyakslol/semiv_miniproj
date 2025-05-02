@@ -7,6 +7,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="../css/planet-styles.css">
+  <style>
+    /* Optional: Add this if you want to ensure the Venus image is styled even if CSS cache is old */
+    .mercury-image {
+      display: block;
+      margin: 40px auto 0 auto;
+      max-height: 340px;
+      max-width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 30px var(--glow-color);
+      background: var(--panel-bg);
+    }
+  </style>
 </head>
 <body class="mercury-theme">
   <div class="stars-container">
@@ -17,26 +29,21 @@
   <header>
     <nav>
       <a href="../index.html" class="back-button"><i class="fas fa-chevron-left"></i> Back to Solar System</a>
-      <div class="nav-controls">
-        <button id="sound-toggle"><i class="fas fa-volume-up"></i></button>
-        <button id="fullscreen-toggle"><i class="fas fa-expand"></i></button>
-      </div>
+      
     </nav>
     <div class="planet-title">
-      <h1>Mercury</h1>
+      <h1>MERCURY</h1>
       <div class="planet-subtitle">First Planet from the Sun</div>
     </div>
   </header>
   <main>
     <section class="planet-showcase">
-      <div id="planet-model-container"></div>
-      <div class="planet-controls">
-        <button class="control-btn" id="rotate-left"><i class="fas fa-undo"></i></button>
-        <button class="control-btn" id="rotate-right"><i class="fas fa-redo"></i></button>
-        <button class="control-btn" id="zoom-in"><i class="fas fa-search-plus"></i></button>
-        <button class="control-btn" id="zoom-out"><i class="fas fa-search-minus"></i></button>
-        <button class="control-btn" id="reset-view"><i class="fas fa-sync"></i></button>
-      </div>
+      <!-- Venus image instead of 3D viewer -->
+      <img 
+        src="https://supernova.eso.org/static/archives/exhibitionimages/screen/earth_2015_swiss_24k.jpg"
+        alt="Earth"
+        class="earth-image"
+      >
     </section>
     <section class="info-navigation">
       <button class="nav-tab active" data-tab="overview">Overview</button>
@@ -49,12 +56,18 @@
       <div class="info-panel active" id="overview">
         <div class="panel-content">
           <h2><span class="highlight">Overview</span></h2>
-          <p>Mercury is the first planet from the Sun and the smallest in the Solar System. It is named after the Roman god Mercurius. Mercury is a rocky, heavily cratered world with a very thin atmosphere and extreme temperature variations.</p>
+          <p>Mercury is the closest planet to the Sun and the smallest planet in our solar system. Because of its proximity to the Sun, it experiences extreme variations in surface temperature, although it surprisingly has no atmosphere to trap heat. This means its surface can be scorching hot during the day and freezing cold at night. Despite being so close to the Sun, Mercury isn’t the hottest planet — that title belongs to Venus due to its thick atmosphere.
+
+            One of the most unique things about Mercury is its orbit. It moves around the Sun faster than any other planet, completing a full orbit in just 88 Earth days. However, its rotation is very slow — one day on Mercury (from one sunrise to the next) takes about 176 Earth days! This creates very long days and nights, which contributes to its dramatic temperature swings.
+            
+            Mercury's surface is covered in craters, similar to the Moon. These were formed by collisions with meteoroids and comets over billions of years. Because it has almost no atmosphere to erode or weather these marks, many of the craters are still clearly visible, making Mercury a kind of fossil record of the early solar system.
+            
+            Interestingly, Mercury has a relatively large iron core for its size, which generates a weak magnetic field — something unexpected for such a small, rocky world. Scientists believe this may offer clues to how Mercury formed and why it differs from other inner planets. Although Mercury has no moons or rings, it remains one of the most mysterious and extreme planets in our solar system.</p>
           <div class="info-card">
-            <div class="card-icon"><i class="fas fa-meteor"></i></div>
+            <div class="card-icon"><i class="fas fa-wind"></i></div>
             <div class="card-content">
-              <h3>Extreme Temperatures</h3>
-              <p>Mercury experiences the largest temperature swing in the solar system, from -173°C at night to 427°C during the day.</p>
+              <h3>My Name?</h3>
+              <p>Mercury was named after the Roman god Mercury, the swift messenger of the gods, because the planet moves quickly across the sky.</p>
             </div>
           </div>
         </div>
@@ -62,19 +75,19 @@
       <div class="info-panel" id="composition">
         <div class="panel-content">
           <h2><span class="highlight">Composition</span></h2>
-          <p>Mercury has a large metallic core, making up about 85% of its radius, surrounded by a silicate mantle and crust. Its surface is covered in craters and smooth plains.</p>
+          <p>Mercury is a dense, rocky planet with a large metal core and a very thin atmosphere. Its surface is heavily cratered and similar in appearance to the Moon.</p>
           <div class="composition-details">
             <div class="composition-item">
-              <h3>Core</h3>
-              <p>Iron-nickel core, partially molten</p>
-            </div>
-            <div class="composition-item">
-              <h3>Mantle & Crust</h3>
-              <p>Silicate rock, heavily cratered</p>
-            </div>
-            <div class="composition-item">
               <h3>Atmosphere</h3>
-              <p>Extremely thin, mostly oxygen, sodium, hydrogen, helium, potassium</p>
+              <p>Very thin exosphere of oxygen, sodium, hydrogen, helium, and potassium</p>
+            </div>
+            <div class="composition-item">
+              <h3>Surface</h3>
+              <p>Rocky, cratered plains, cliffs, and ancient impact basins</p>
+            </div>
+            <div class="composition-item">
+              <h3>Core</h3>
+              <p>Large iron core — makes up about 85% of the planet’s radius</p>
             </div>
           </div>
         </div>
@@ -84,24 +97,17 @@
           <h2><span class="highlight">Exploration</span></h2>
           <div class="timeline">
             <div class="timeline-item">
-              <div class="timeline-date">1974-75</div>
+              <div class="timeline-date">1970s-80s</div>
               <div class="timeline-content">
-                <h3>Mariner 10</h3>
-                <p>First spacecraft to visit Mercury, mapping about 45% of its surface.</p>
+                <h3>Venera Program</h3>
+                <p>Soviet landers sent back the first images from the surface of Venus.</p>
               </div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-date">2011-2015</div>
+              <div class="timeline-date">2006–</div>
               <div class="timeline-content">
-                <h3>MESSENGER</h3>
-                <p>Orbited Mercury, mapped the entire surface, discovered water ice at poles, and crashed into the planet in 2015[1].</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-date">2018–2026</div>
-              <div class="timeline-content">
-                <h3>BepiColombo</h3>
-                <p>Joint ESA/JAXA mission launched in 2018, will orbit Mercury in 2026 to study its magnetosphere and surface in detail[1].</p>
+                <h3>Akatsuki</h3>
+                <p>Japan's Akatsuki orbiter studies Venus's atmosphere, weather, and volcanic activity.</p>
               </div>
             </div>
           </div>
@@ -112,19 +118,19 @@
           <h2><span class="highlight">Fun Facts</span></h2>
           <div class="fun-fact-grid">
             <div class="fun-fact-card">
-              <div class="fun-fact-icon"><i class="fas fa-sun"></i></div>
-              <h3>Closest to the Sun</h3>
-              <p>Despite being closest to the Sun, Mercury is not the hottest planet (Venus is hotter).</p>
+              <div class="fun-fact-icon"><i class="fas fa-fire"></i></div>
+              <h3>Fastest Planet</h3>
+              <p>Mercury orbits the Sun in just 88 Earth days — the shortest orbit in the solar system.</p>
             </div>
             <div class="fun-fact-card">
-              <div class="fun-fact-icon"><i class="fas fa-stopwatch"></i></div>
-              <h3>Long Days</h3>
-              <p>One day on Mercury (sunrise to sunrise) lasts 176 Earth days!</p>
+              <div class="fun-fact-icon"><i class="fas fa-sync-alt"></i></div>
+              <h3>Extreme Temperatures</h3>
+              <p>It can go from 430°C during the day to -180°C at night because it has almost no atmosphere.</p>
             </div>
             <div class="fun-fact-card">
-              <div class="fun-fact-icon"><i class="fas fa-weight"></i></div>
-              <h3>Heavy Metal</h3>
-              <p>Mercury has the highest density of any planet except Earth.</p>
+              <div class="fun-fact-icon"><i class="fas fa-cloud"></i></div>
+              <h3>No Moon</h3>
+              <p>Mercury has no moons or rings — it's just too close to the Sun.</p>
             </div>
           </div>
         </div>
@@ -133,22 +139,35 @@
         <div class="panel-content">
           <h2><span class="highlight">Statistics</span></h2>
           <div class="stat-comparison">
-            <div class="stat-item"><div class="stat-label">Diameter</div><div class="stat-value">4,879 km</div></div>
-            <div class="stat-item"><div class="stat-label">Mass</div><div class="stat-value">3.3 × 10²³ kg</div></div>
-            <div class="stat-item"><div class="stat-label">Day Length</div><div class="stat-value">58.6 Earth days</div></div>
+            <div class="stat-item"><div class="stat-label">Diameter</div><div class="stat-value">4,880 km</div></div>
+            <div class="stat-item"><div class="stat-label">Mass</div><div class="stat-value">3.30 × 10²³ kg</div></div>
+            <div class="stat-item"><div class="stat-label">Day Length</div><div class="stat-value">59 Earth days</div></div>
             <div class="stat-item"><div class="stat-label">Year Length</div><div class="stat-value">88 Earth days</div></div>
             <div class="stat-item"><div class="stat-label">Avg. Distance from Sun</div><div class="stat-value">57.9 million km</div></div>
-            <div class="stat-item"><div class="stat-label">Surface Temp</div><div class="stat-value">-173°C to 427°C</div></div>
+            <div class="stat-item"><div class="stat-label">Surface Temp</div><div class="stat-value">-180°C to 430°C</div></div>
           </div>
         </div>
       </div>
     </section>
   </main>
   <footer>
-    <p>© 2025 3D CSS Solar System Explorer</p>
+    <!-- <p>© 2025 3D CSS Solar System Explorer</p> -->
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
-  <script src="../js/planet-mercury.js"></script>
+  <!-- No 3D scripts needed -->
+  <script>
+    // Tab navigation logic
+    document.addEventListener('DOMContentLoaded', function() {
+      const navTabs = document.querySelectorAll('.nav-tab');
+      const infoPanels = document.querySelectorAll('.info-panel');
+      navTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          navTabs.forEach(t => t.classList.remove('active'));
+          infoPanels.forEach(p => p.classList.remove('active'));
+          this.classList.add('active');
+          document.getElementById(this.getAttribute('data-tab')).classList.add('active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
