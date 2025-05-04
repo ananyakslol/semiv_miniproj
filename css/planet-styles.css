@@ -33,7 +33,7 @@
   --primary-color: #2e617d;
   --secondary-color: #1b3d5e;
   --accent-color: #4c72af;
-  --glow-color: rgba(76, 109, 175, 0.6);
+  --glow-color: rgb(255, 254, 254);
 
   position: relative;
   height: 400px;
@@ -106,8 +106,8 @@
   --glow-color: rgba(255, 152, 0, 0.6);
 }
 
-body {
-  background: radial-gradient(ellipse at 50% 20%, #23243a 0%, #0a0a0a 100%);
+body { 
+ background: radial-gradient(ellipse at 50% 20%, #23243a 0%, #0a0a0a 100%); 
   color: var(--text-color);
   font-family: 'Rajdhani', 'Orbitron', Arial, sans-serif;
   min-height: 100vh;
