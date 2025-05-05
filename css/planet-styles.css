@@ -6,9 +6,9 @@
   --card-bg: rgba(26, 26, 26, 0.9);
   --border-radius: 12px;
   --transition: 0.3s cubic-bezier(.4,2,.6,1);
-}
+ } 
 
- Mercury 
+ /* Mercury  */
 .mercury-theme {
   --primary-color: #717E73;
   --secondary-color: #A9A9A9;
@@ -16,36 +16,22 @@
   --glow-color: rgba(113, 126, 115, 0.6);
 }
 
- Venus
-.venus-image {
-  display: block;
-  margin: 40px auto 0 auto;
-  max-height: 340px;
-  max-width: 100%;
-  border-radius: 50%;
-  box-shadow: 0 0 30px var(--glow-color);
-  background: var(--panel-bg);
+ /* Venus */
+.venus-theme {
+  --primary-color: #7d6c2e;
+  --secondary-color: #5e531b;
+  --accent-color: #af954c;
+  --glow-color: rgba(178, 135, 27, 0.712);
 }
 
 
- Earth 
+ /* Earth  */
 .earth-theme {
   --primary-color: #2e617d;
   --secondary-color: #1b3d5e;
   --accent-color: #4c72af;
-  --glow-color: rgb(255, 254, 254);
+  --glow-color: rgba(27, 120, 178, 0.712);
 
-  position: relative;
-  height: 400px;
-  margin-bottom: 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 30px var(--glow-color);
-  background: rgba(0,0,0,0.3);
-  overflow: hidden;
-  border: 1px solid var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 
@@ -125,7 +111,7 @@ header, footer {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Orbitron', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 700;
   margin: 0 0 1rem 0;
   color: var(--primary-color);
@@ -240,7 +226,7 @@ a:hover {
   border: none;
   border-bottom: 2px solid transparent;
   color: var(--text-color);
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   cursor: pointer;
   transition: all var(--transition);
